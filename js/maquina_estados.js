@@ -7,7 +7,8 @@ const MaquinaEstados = {
     },
 
     cambiar_estado: (estado_nuevo) => {
-        console.log(evento);
+        console.log("---(cambiando estado)---");
+        console.log(estado_nuevo);
 
     }
 
