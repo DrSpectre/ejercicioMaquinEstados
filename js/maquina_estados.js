@@ -1,9 +1,15 @@
+const estado_actual = estado_base;
+
 
 const MaquinaEstados = {
-    estado_actual: 'texto por aqui',
+    inicializar: () => {
+        console.log("Esta VIVO")
+        estado_actual.inicializar()
+    },
 
     actualizar: (evento) => {
-        console.log(evento);
+        console.log(estado_actual);
+        estado_actual.actualizar(evento);
     },
 
     cambiar_estado: (estado_nuevo) => {
