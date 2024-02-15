@@ -1,0 +1,28 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.contenedor{
+    width: 50%;
+    height: 100px;
+
+    margin: auto;
+    margin-bottom: 10px;
+
+    font-size: 2rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contenedor_estado{
+    background-color: gray;
+}
+
+.contenedor_boton{
+    background-color: red;
+}
+
+
