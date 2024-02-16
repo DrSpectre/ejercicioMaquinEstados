@@ -1,4 +1,4 @@
-const estado_actual = estado_base;
+let estado_actual = estado_base;
 
 
 const MaquinaEstados = {
@@ -16,7 +16,24 @@ const MaquinaEstados = {
         console.log("---(cambiando estado)---");
         console.log(estado_nuevo);
 
+        estado_actual.finalizar()
+        /*
+        estado_actual.finalizar()
+        estado_actual = estado_nuevo
+        estado_actual.inicializar()
+        */
+
     }
 
 }
+
+
+
+
+
+
+
+
+
+
 
