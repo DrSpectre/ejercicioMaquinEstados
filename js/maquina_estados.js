@@ -14,12 +14,13 @@ const MaquinaEstados = {
     actualizar: (evento) => {
         console.log(estado_actual);
         estado_actual.actualizar(evento);
-
-        console.log(evento)
     },
 
     cambiar_estado: (estado_nuevo) => {
         console.log("---(cambiando estado)---");
+        console.log("---(estado actual)---");
+        console.log(estado_actual);
+        console.log("---(estado nuevo)---");
         console.log(estado_nuevo);
 
         estado_actual.finalizar()
@@ -31,12 +32,6 @@ const MaquinaEstados = {
 }
 
 
-setInterval(() => {
-    MaquinaEstados.actualizar({
-        type: "temporizador"
-    })
-    
-}, tiempo_espera);
 
 
 
