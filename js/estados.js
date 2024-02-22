@@ -7,12 +7,20 @@ const estado_base = {
         document.querySelector("#boton2").innerText = "Cambiar a Dormir"
     },
     actualizar: (evento) => {
-        document.querySelector("#mostrar_estado").innerText = "Pulsaste el boton"
-        console.log(evento.target)
+        // document.querySelector("#mostrar_estado").innerText = "Pulsaste el boton"
+        // console.log(evento.target)
+
+        if(evento.type == "temporizador"){
+            bebe.hambre += 10
+            document.querySelector("#mostrar_estado").innerText = `Bebe tiene ${bebe.hambre} cantidad de hambre`
+
+            if(bebe.hambre > 90){
+                MaquinaEstados.cambiar_estado(llorar_por_comida)
+            }
+        }
 
         if(evento.target && evento.target.id === "boton1"){
             console.log("HOuston estamos bien")
-            MaquinaEstados.cambiar_estado(llorar_por_comida)
         }
         else {
             console.log("Houston tenemos un problema")
@@ -28,10 +36,24 @@ const estado_base = {
 const llorar_por_comida = {
     inicializar: () => {
         document.querySelector("#mostrar_estado").innerText = "Esta llorando por comida"
+
+        document.querySelector("#boton1").innerText = "Alimentar"
+        document.querySelector("#boton2").innerText = "----"
+
+        document.querySelector("#boton2").classList.add("oculto")
     },
-    actualizar: () => {
-        //document.querySelector("#mostrar_estado").innerText = ""
+
+    actualizar: (evento) => {
+
+        if(evento.target && evento.target.id === "boton1"){
+
+            bebe.hambre = 0
+            MaquinaEstados.cambiar_estado(estado_base)
+        }
+
+
     },
+
     finalizar: () => {
         document.querySelector("#mostrar_estado").innerText = "Esta saliendo del estado llorar por comida"
     },

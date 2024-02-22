@@ -1,5 +1,9 @@
 let estado_actual = estado_base;
 
+const tiempo_espera = 1000
+
+
+
 
 const MaquinaEstados = {
     inicializar: () => {
@@ -10,6 +14,8 @@ const MaquinaEstados = {
     actualizar: (evento) => {
         console.log(estado_actual);
         estado_actual.actualizar(evento);
+
+        console.log(evento)
     },
 
     cambiar_estado: (estado_nuevo) => {
@@ -17,15 +23,26 @@ const MaquinaEstados = {
         console.log(estado_nuevo);
 
         estado_actual.finalizar()
-        /*
-        estado_actual.finalizar()
         estado_actual = estado_nuevo
         estado_actual.inicializar()
-        */
 
     }
 
 }
+
+
+setInterval(() => {
+    MaquinaEstados.actualizar({
+        type: "temporizador"
+    })
+    
+}, tiempo_espera);
+
+
+
+
+
+
 
 
 
